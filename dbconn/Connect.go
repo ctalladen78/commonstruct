@@ -1,4 +1,4 @@
-package gconn
+package dbconn
 
 import (
 	"bytes"

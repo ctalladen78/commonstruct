@@ -1,4 +1,4 @@
-package s3parser
+package s3lib
 
 import (
 	"github.com/aws/aws-lambda-go/events"

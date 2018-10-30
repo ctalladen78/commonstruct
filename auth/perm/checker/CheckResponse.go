@@ -1,6 +1,6 @@
 package checker
 
-import "github.com/kkesley/perm"
+import "github.com/kkesley/commonstruct/auth/perm"
 
 //CheckResponse holds the response of checking resource
 type CheckResponse struct {

@@ -3,8 +3,8 @@ package checker
 import (
 	"strconv"
 
-	"github.com/kkesley/arn"
-	"github.com/kkesley/iteacloud-jwt/jwtidentity"
+	"github.com/kkesley/commonstruct/arn"
+	"github.com/kkesley/commonstruct/auth/jwt/jwtidentity"
 )
 
 //CheckPrivatePermission check if a user can access a private resource.

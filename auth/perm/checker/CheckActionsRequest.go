@@ -1,6 +1,6 @@
 package checker
 
-import "github.com/kkesley/iteacloud-jwt/jwtidentity"
+import "github.com/kkesley/commonstruct/auth/jwt/jwtidentity"
 
 //CheckActionsRequest holds the request to check valid actions
 type CheckActionsRequest struct {

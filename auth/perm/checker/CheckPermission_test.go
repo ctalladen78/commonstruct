@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/kkesley/iteacloud-jwt/jwtidentity"
+	"github.com/kkesley/commonstruct/auth/jwt/jwtidentity"
 )
 
 func TestCheckPermission(test *testing.T) {

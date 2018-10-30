@@ -1,4 +1,4 @@
-package gconn
+package dbconn
 
 //DB structure for connecting to database
 type DB struct {

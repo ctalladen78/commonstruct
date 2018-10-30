@@ -3,7 +3,7 @@ package checker
 import (
 	"strings"
 
-	"github.com/kkesley/perm"
+	"github.com/kkesley/commonstruct/auth/perm"
 )
 
 //CheckActions checks if a role is allowed for a certain action

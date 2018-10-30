@@ -5,11 +5,11 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/kkesley/s3-msgstruct"
+	"github.com/kkesley/commonstruct/itcmessaging"
 )
 
 //FireSMSSNS push sms sns notification
-func FireSMSSNS(topic string, sms *msgstruct.StandardSMSStructure) error {
+func FireSMSSNS(topic string, sms *itcmessaging.StandardSMSStructure) error {
 	if sms == nil {
 		return errors.New("sms cannot be nil")
 	}

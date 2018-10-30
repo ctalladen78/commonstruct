@@ -5,7 +5,7 @@ import (
 	"io/ioutil"
 	"testing"
 
-	"github.com/kkesley/iteacloud-jwt/jwtidentity"
+	"github.com/kkesley/commonstruct/auth/jwt/jwtidentity"
 )
 
 func TestParseActions(test *testing.T) {

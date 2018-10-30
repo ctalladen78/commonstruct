@@ -1,6 +1,6 @@
 package checker
 
-import "github.com/kkesley/iteacloud-jwt/jwtidentity"
+import "github.com/kkesley/commonstruct/auth/jwt/jwtidentity"
 
 //CheckPermissionRequest holds the request for checking eligible permissions
 type CheckPermissionRequest struct {

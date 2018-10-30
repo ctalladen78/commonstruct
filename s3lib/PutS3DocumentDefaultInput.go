@@ -1,4 +1,4 @@
-package s3parser
+package s3lib
 
 //PutS3DocumentDefaultInput input object for putting object to s3
 type PutS3DocumentDefaultInput struct {

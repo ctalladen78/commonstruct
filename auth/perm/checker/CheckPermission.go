@@ -6,8 +6,8 @@ import (
 	"strings"
 
 	"github.com/aws/aws-sdk-go/aws"
-	"github.com/kkesley/perm"
-	parser "github.com/kkesley/s3-parser"
+	"github.com/kkesley/commonstruct/auth/perm"
+	"github.com/kkesley/commonstruct/s3lib"
 )
 
 //CheckPermission returns allowed objects. If empty, it means the permission is denied
@@ -34,7 +34,7 @@ func CheckPermission(request CheckPermissionRequest) (*CheckResponse, error) {
 				},
 			}, nil
 		}
-		if roleByte, err := parser.GetS3DocumentDefault(request.Region, request.Bucket, strings.Replace(request.Role, "::", "_", -1)+"/final__role.json"); err == nil {
+		if roleByte, err := s3lib.GetS3DocumentDefault(request.Region, request.Bucket, strings.Replace(request.Role, "::", "_", -1)+"/final__role.json"); err == nil {
 			request.PolicyStr = aws.String(string(roleByte))
 		} else {
 			return &CheckResponse{

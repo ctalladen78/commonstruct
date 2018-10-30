@@ -4,7 +4,7 @@ import (
 	"errors"
 	"log"
 
-	parser "github.com/kkesley/s3-parser"
+	"github.com/kkesley/commonstruct/s3lib"
 	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/google"
 )
@@ -22,7 +22,7 @@ func GetConfig(input GetConfigInput) (*oauth2.Config, error) {
 	if len(input.Bucket) <= 0 || len(input.Region) <= 0 || len(input.Key) <= 0 {
 		return nil, errors.New("Credentials input cannot be null")
 	}
-	b, err := parser.GetS3DocumentDefault(input.Region, input.Bucket, input.Key)
+	b, err := s3lib.GetS3DocumentDefault(input.Region, input.Bucket, input.Key)
 	if err != nil {
 		log.Fatalf("Unable to read client secret file: %v", err)
 		return nil, err

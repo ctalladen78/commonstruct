@@ -1,7 +1,7 @@
 package checker
 
 import (
-	"github.com/kkesley/iteacloud-jwt/jwtidentity"
+	"github.com/kkesley/commonstruct/auth/jwt/jwtidentity"
 )
 
 //CheckActionsFromTokenRequest holds the request to CheckActionsFromToken
