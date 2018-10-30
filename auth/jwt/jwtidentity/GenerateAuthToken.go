@@ -11,7 +11,7 @@ import (
 //GenerateAuthToken generate from map to auth token
 func GenerateAuthToken(authContext map[string]interface{}) TokenRequest {
 	authToken := TokenRequest{}
-	iterateAuthContext([]string{"IsRoot", "UserARN", "RoleARN", "ClientID", "ClientARN", "ClientName", "FirstName", "LastName", "Username", "Groups", "Permissions", "Device"}, &authToken, authContext)
+	iterateAuthContext([]string{"IsRoot", "UserARN", "RoleARN", "ClientID", "ClientARN", "ClientName", "FirstName", "LastName", "Username", "Groups", "Permissions", "Device", "IsExternal", "Service"}, &authToken, authContext)
 	return authToken
 }
 
@@ -90,12 +90,18 @@ func iterateAuthContext(fields []string, token *TokenRequest, context map[string
 				}
 				token.Device = context[field].(string)
 
-			case "IsPublic":
+			case "IsExternal":
 				if fieldType == "string" {
-					token.IsPublic, _ = strconv.ParseBool(context[field].(string))
+					token.IsExternal, _ = strconv.ParseBool(context[field].(string))
 				} else if fieldType == "bool" {
-					token.IsPublic = context[field].(bool)
+					token.IsExternal = context[field].(bool)
 				}
+
+			case "Service":
+				if fieldType != "string" {
+					continue
+				}
+				token.Service = context[field].(string)
 			}
 
 		}
