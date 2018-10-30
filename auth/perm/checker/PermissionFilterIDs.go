@@ -20,7 +20,7 @@ func (p CheckResponse) PermissionFilterIDs(db *gorm.DB, arnGroup string, arnRequ
 	} else if p.Deny.All {
 		conditions = p.Deny.Conditions
 	}
-	if len(conditions) <= 0 && (p.Allow.All || p.Deny.All) {
+	if len(conditions) <= 0 && (p.Allow.All || p.Deny.All) { //if allow all and no conditions, allow all
 		return nil
 	}
 	if p.Allow.Owned || p.Deny.Owned {
