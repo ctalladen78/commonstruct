@@ -1,22 +1,12 @@
 package es
 
 import (
-	"net/http"
-
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/aws/signer/v4"
 	"github.com/olivere/elastic"
 	"github.com/sha1sum/aws_signing_client"
 )
-
-//Client hold shared information
-type Client struct {
-	client     *http.Client
-	appsyncURL string
-	region     string
-	signer     *v4.Signer
-}
 
 //New generate new client
 func New(url string, region string) (*elastic.Client, error) {
