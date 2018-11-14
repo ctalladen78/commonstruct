@@ -1,4 +1,4 @@
-package predefined
+package iteaperm
 
 //FragmentAction holds additional feature of a resource
 type FragmentAction struct {
