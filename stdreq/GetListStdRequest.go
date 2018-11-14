@@ -45,4 +45,7 @@ func GetListStdRequest(requestEvent events.APIGatewayProxyRequest, request *List
 	if search, ok := requestEvent.QueryStringParameters["search"]; ok {
 		request.Search = aws.String(search)
 	}
+	if token, ok := requestEvent.QueryStringParameters["next_token"]; ok {
+		request.NextToken = aws.String(token)
+	}
 }
