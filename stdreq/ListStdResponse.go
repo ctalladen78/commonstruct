@@ -4,6 +4,6 @@ package stdreq
 type ListStdResponse struct {
 	Page      *int    `json:"page"`
 	Limit     *int    `json:"limit"`
-	Count     int     `json:"count"`
+	Count     int64   `json:"count"`
 	NextToken *string `json:"next_token"`
 }
