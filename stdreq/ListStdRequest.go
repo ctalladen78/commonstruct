@@ -5,6 +5,6 @@ type ListStdRequest struct {
 	Search *string `json:"search"`
 	Limit  *int    `json:"limit"`
 	Page   *int    `json:"page"`
-	Order  *string `json:"order"`
+	Sort   []Sort  `json:"sort"`
 	StdRequest
 }

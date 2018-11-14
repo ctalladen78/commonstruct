@@ -2,6 +2,7 @@ package stdreq
 
 import (
 	"strconv"
+	"strings"
 
 	"github.com/aws/aws-lambda-go/events"
 	"github.com/aws/aws-sdk-go/aws"
@@ -30,9 +31,18 @@ func GetListStdRequest(requestEvent events.APIGatewayProxyRequest, request *List
 	}
 
 	if order, ok := requestEvent.QueryStringParameters["order"]; ok {
-		request.Order = aws.String(order)
+		request.Sort = make([]Sort, 0)
+		for _, statement := range strings.Split(order, ",") {
+			orderStack := strings.Split(statement, "=")
+			if len(orderStack) > 1 {
+				request.Sort = append(request.Sort, Sort{
+					Field:     orderStack[0],
+					Ascending: orderStack[1] == "asc",
+				})
+			}
+		}
 	}
-	if order, ok := requestEvent.QueryStringParameters["search"]; ok {
-		request.Search = aws.String(order)
+	if search, ok := requestEvent.QueryStringParameters["search"]; ok {
+		request.Search = aws.String(search)
 	}
 }
