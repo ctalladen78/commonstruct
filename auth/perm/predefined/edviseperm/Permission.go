@@ -1,4 +1,4 @@
-package iteaperm
+package edviseperm
 
 //PermissionConstant hold the permission in the higher level
 type PermissionConstant struct {
@@ -8,13 +8,11 @@ type PermissionConstant struct {
 //PlatformConstant hold the permission strings in platform
 type PlatformConstant struct {
 	User string `json:"user"`
-	Role string `json:"role"`
 }
 
 //Permission predefined permission
 var Permission = PermissionConstant{
 	Platform: PlatformConstant{
-		User: "itea::platform::user",
-		Role: "itea::platform::role",
+		User: "edvise::platform::user",
 	},
 }
