@@ -8,7 +8,8 @@ type ActionConstant struct {
 
 //PlatformAction holds action of platform
 type PlatformAction struct {
-	User UserAction `json:"user"`
+	User   UserAction   `json:"user"`
+	School SchoolAction `json:"school"`
 }
 
 //UserAction holds action of user
@@ -17,6 +18,12 @@ type UserAction struct {
 	Write  string `json:"write"`
 	Delete string `json:"delete"`
 	Create string `json:"create"`
+}
+
+//SchoolAction holds action of user
+type SchoolAction struct {
+	Read  string `json:"read"`
+	Write string `json:"write"`
 }
 
 //BasicAction holds basic action
@@ -42,6 +49,10 @@ var Action = ActionConstant{
 			Write:  Permission.Platform.User + "::" + "write",
 			Delete: Permission.Platform.User + "::" + "delete",
 			Create: Permission.Platform.User + "::" + "create",
+		},
+		School: SchoolAction{
+			Read:  Permission.Platform.School + "::" + "read",
+			Write: Permission.Platform.School + "::" + "write",
 		},
 	},
 }
