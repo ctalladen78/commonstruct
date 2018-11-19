@@ -9,6 +9,7 @@ type PermissionConstant struct {
 type PlatformConstant struct {
 	User   string `json:"user"`
 	School string `json:"school"`
+	Course string `json:"course"`
 }
 
 //Permission predefined permission
@@ -16,5 +17,6 @@ var Permission = PermissionConstant{
 	Platform: PlatformConstant{
 		User:   "edvise::platform::user",
 		School: "edvise::platform::school",
+		Course: "edvise::platform::course",
 	},
 }
