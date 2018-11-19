@@ -15,6 +15,7 @@ type EsClass struct {
 	UpdatedBy         *string    `json:"updated_by,omitempty"`
 	IsBoundedByCourse *bool      `json:"is_bounded_by_course,omitempty"` //class.code == course.code
 
-	Courses  []string `json:"courses,omitempty"`
-	Students []string `json:"students,omitempty"`
+	Courses     []string `json:"courses,omitempty"`
+	Students    []string `json:"students,omitempty"`
+	Assignments []string `json:"assignments,omitempty"`
 }
