@@ -23,6 +23,7 @@ type EsUser struct {
 
 //EsParent holds the parent in elastic search
 type EsParent struct {
+	ARN                *string `json:"arn,omitempty"`
 	FirstName          *string `json:"first_name"`
 	LastName           *string `json:"last_name"`
 	Phone              *string `json:"phone"`
@@ -37,6 +38,7 @@ type EsParent struct {
 
 //EsStudent holds the student in elastic search
 type EsStudent struct {
+	ARN                *string      `json:"arn,omitempty"`
 	FirstName          *string      `json:"first_name"`
 	LastName           *string      `json:"last_name"`
 	Phone              *string      `json:"phone"`

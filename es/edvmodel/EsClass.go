@@ -4,6 +4,7 @@ import "time"
 
 //EsClass holds the class in elasticsearch
 type EsClass struct {
+	ARN        *string `json:"arn,omitempty"`
 	ClientARN  *string `json:"client_arn,omitempty"`
 	Code       *string `json:"code,omitempty"`
 	CustomCode *string `json:"custom_code,omitempty"`

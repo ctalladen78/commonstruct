@@ -4,6 +4,7 @@ import "time"
 
 //EsCourse holds the course in elasticsearch
 type EsCourse struct {
+	ARN             *string `json:"arn,omitempty"`
 	ClientARN       *string `json:"client_arn,omitempty"`
 	Code            *string `json:"code,omitempty"`
 	CustomCode      *string `json:"custom_code,omitempty"`
