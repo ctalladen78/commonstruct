@@ -10,6 +10,7 @@ type EsUser struct {
 	Student      *EsStudent `json:"student,omitempty"`
 	Parent       *EsParent  `json:"parent,omitempty"`
 
+	Batch     *string `json:"batch,omitempty"`
 	Username  string  `json:"username,omitempty"`
 	Principal *string `json:"principal,omitempty"`
 	ClientARN *string `json:"client_arn,omitempty"`
