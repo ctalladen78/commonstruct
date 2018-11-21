@@ -12,7 +12,7 @@ type EsClass struct {
 
 	IsBoundedByCourse *bool `json:"is_bounded_by_course,omitempty"` //class.code == course.code
 
-	RetiredCodes     []string   `json:"retired_codes"` //for original classes. To keep track the old codes
+	RetiredCodes     []string   `json:"retired_codes,omitempty"` //for original classes. To keep track the old codes
 	IsRetired        *bool      `json:"is_retired,omitempty"`
 	RetiredBatchTime *time.Time `json:"retired_batch_time,omitempty"`
 
