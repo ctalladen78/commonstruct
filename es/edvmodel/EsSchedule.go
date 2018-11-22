@@ -21,7 +21,7 @@ type EsSchedule struct {
 
 	//Participants can contain 1 or more filters (who are this event intended for)
 	//For course schedule, participants should contain 2 elements [course_code, class_code]
-	//For single class event, participants should contain 1 element [class_code]
+	//For single class event, participants should contain 2 elements [class_code, 'CLASS-ONLY']. the second code is to prevent including course schedules
 	//For a batch event, participants should contain 1 element [batch_code]
 	//For public events, participants should contain 1 element [*]
 	Participants []string `json:"participants,omitempty" location:"body"`
