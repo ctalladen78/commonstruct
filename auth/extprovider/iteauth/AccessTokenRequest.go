@@ -1,5 +1,12 @@
 package iteauth
 
+import (
+	"sync"
+
+	"github.com/kkesley/commonstruct/apigw"
+	"github.com/mohae/deepcopy"
+)
+
 //AccessTokenRequest holds the access token request
 type AccessTokenRequest struct {
 	ClientID      string  `json:"client_id"`
@@ -11,4 +18,11 @@ type AccessTokenRequest struct {
 	ClientARN     string  `json:"client_arn"`
 	ClientName    string  `json:"client_name"`
 	Device        string  `json:"device"`
+}
+
+//Log the request
+func (r AccessTokenRequest) Log(wg *sync.WaitGroup) {
+	defer wg.Done()
+	v := deepcopy.Copy(r).(AccessTokenRequest)
+	apigw.LogRequest(&v)
 }
