@@ -3,6 +3,7 @@ package iteauth
 import (
 	"bytes"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"io/ioutil"
 	"net/http"
@@ -29,7 +30,14 @@ func GetAccessToken(request AccessTokenRequest) (*AccessTokenResponse, error) {
 	}
 	defer resp.Body.Close()
 	fmt.Println("response Status:", resp.Status)
-	fmt.Println("response Headers:", resp.Header)
+	if resp.StatusCode == 401 {
+		return nil, errors.New("Unauthorized")
+	} else if resp.StatusCode == 500 {
+		return nil, errors.New("Internal Server Error")
+	} else if resp.StatusCode != 200 {
+		return nil, errors.New("Unknown Error")
+	}
+
 	respBody, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return nil, err
