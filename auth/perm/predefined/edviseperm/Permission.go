@@ -13,6 +13,7 @@ type PlatformConstant struct {
 	Class      string `json:"class"`
 	Schedule   string `json:"schedule"`
 	Assessment string `json:"assessment"`
+	Score      string `json:"score"`
 }
 
 //Permission predefined permission
@@ -24,5 +25,6 @@ var Permission = PermissionConstant{
 		Class:      "edvise::platform::class",
 		Schedule:   "edvise::platform::schedule",
 		Assessment: "edvise::platform::assessment",
+		Score:      "edvise::platform::score",
 	},
 }

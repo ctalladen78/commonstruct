@@ -14,6 +14,7 @@ type PlatformAction struct {
 	Class      ClassAction      `json:"class"`
 	Schedule   ScheduleAction   `json:"schedule"`
 	Assessment AssessmentAction `json:"assessment"`
+	Score      ScoreAction      `json:"score"`
 }
 
 //UserAction holds action of user
@@ -38,7 +39,7 @@ type CourseAction struct {
 	Create string `json:"create"`
 }
 
-//ClassAction holds action for courses
+//ClassAction holds action for classes
 type ClassAction struct {
 	Read   string `json:"read"`
 	Write  string `json:"write"`
@@ -46,7 +47,7 @@ type ClassAction struct {
 	Create string `json:"create"`
 }
 
-//ScheduleAction holds action for courses
+//ScheduleAction holds action for schedules
 type ScheduleAction struct {
 	Read   string `json:"read"`
 	Write  string `json:"write"`
@@ -54,8 +55,16 @@ type ScheduleAction struct {
 	Create string `json:"create"`
 }
 
-//AssessmentAction holds action for courses
+//AssessmentAction holds action for assessments
 type AssessmentAction struct {
+	Read   string `json:"read"`
+	Write  string `json:"write"`
+	Delete string `json:"delete"`
+	Create string `json:"create"`
+}
+
+//ScoreAction holds action for scores
+type ScoreAction struct {
 	Read   string `json:"read"`
 	Write  string `json:"write"`
 	Delete string `json:"delete"`
@@ -113,6 +122,12 @@ var Action = ActionConstant{
 			Write:  Permission.Platform.Assessment + "::" + "write",
 			Delete: Permission.Platform.Assessment + "::" + "delete",
 			Create: Permission.Platform.Assessment + "::" + "create",
+		},
+		Score: ScoreAction{
+			Read:   Permission.Platform.Score + "::" + "read",
+			Write:  Permission.Platform.Score + "::" + "write",
+			Delete: Permission.Platform.Score + "::" + "delete",
+			Create: Permission.Platform.Score + "::" + "create",
 		},
 	},
 }
