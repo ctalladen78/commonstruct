@@ -21,6 +21,13 @@ type EsClass struct {
 	Courses  []string `json:"courses,omitempty"`
 	Students []string `json:"students,omitempty"`
 
+	//CustomTeacher holds the teacher for a specific course. This will override all courses teachers
+	CustomTeacher map[string][]string `json:"custom_teacher,omitempty"`
+
+	//Teachers hold the user arn of teachers
+	//This can be used for home teachers for this class. This field can also be used if every courses is taught per class basis,
+	Teachers []string `json:"teachers,omitempty"`
+
 	Principal *string    `json:"principal,omitempty"`
 	CreatedAt *time.Time `json:"created_at,omitempty"`
 	UpdatedAt *time.Time `json:"updated_at,omitempty"`
