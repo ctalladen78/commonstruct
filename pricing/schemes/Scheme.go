@@ -9,6 +9,8 @@ type SchemeConstant struct {
 //Scheme predefined schemes
 var Scheme = SchemeConstant{
 	Iteacloud: IteacloudScheme{
+		ClientCreate:    "ITC:CLIENT:CREATE",
+		ClientClose:     "ITC:CLIENT:CLOSE",
 		UserLogin:       "ITC:USER:LOGIN",
 		UserActive:      "ITC:USER:ACTIVE",
 		UserCreate:      "ITC:USER:CREATE",
