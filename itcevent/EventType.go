@@ -5,7 +5,7 @@ import "time"
 //EventType holds the information regarding an event
 type EventType struct {
 	Event     string                 `json:"event"`
-	ClientID  string                 `json:"client_id"`
+	ClientARN string                 `json:"client_arn"`
 	Principal string                 `json:"principal"`
 	Target    Target                 `json:"target"`
 	Detail    map[string]interface{} `json:"detail"`
