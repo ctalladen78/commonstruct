@@ -7,14 +7,16 @@ type PermissionConstant struct {
 
 //PlatformConstant hold the permission strings in platform
 type PlatformConstant struct {
-	User string `json:"user"`
-	Role string `json:"role"`
+	User    string `json:"user"`
+	Role    string `json:"role"`
+	Billing string `json:"billing"`
 }
 
 //Permission predefined permission
 var Permission = PermissionConstant{
 	Platform: PlatformConstant{
-		User: "itea::platform::user",
-		Role: "itea::platform::role",
+		User:    "itea::platform::user",
+		Role:    "itea::platform::role",
+		Billing: "itea::platform::billing",
 	},
 }
