@@ -2,7 +2,8 @@ package checker
 
 import (
 	"os"
-	"strconv"
+
+	"github.com/kkesley/commonstruct/arn"
 )
 
 //CheckPermissionFromToken returns permission expression from token (convenient but no customization)
@@ -15,7 +16,7 @@ func CheckPermissionFromToken(request CheckPermissionFromTokenRequest) (*CheckRe
 		Bucket:   os.Getenv("ROLE_OUTPUT_BUCKET"),
 		Region:   os.Getenv("ROLE_OUTPUT_REGION"),
 		Role:     role,
-		ClientID: strconv.FormatUint(request.Token.ClientID, 10),
+		ClientID: arn.GetResourceID(request.Token.ClientARN),
 		Path:     request.Path,
 		Actions:  request.BasicActions,
 		Token:    request.Token,

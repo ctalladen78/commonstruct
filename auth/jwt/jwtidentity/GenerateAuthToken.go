@@ -11,7 +11,7 @@ import (
 //GenerateAuthToken generate from map to auth token
 func GenerateAuthToken(authContext map[string]interface{}) TokenRequest {
 	authToken := TokenRequest{}
-	iterateAuthContext([]string{"IsRoot", "UserARN", "RoleARN", "ClientID", "ClientARN", "ClientName", "FirstName", "LastName", "Username", "Groups", "Permissions", "Device", "IsExternal", "Service"}, &authToken, authContext)
+	iterateAuthContext([]string{"IsRoot", "UserARN", "RoleARN", "ClientARN", "ClientARN", "ClientName", "FirstName", "LastName", "Username", "Groups", "Permissions", "Device", "IsExternal", "Service"}, &authToken, authContext)
 	return authToken
 }
 

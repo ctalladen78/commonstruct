@@ -7,7 +7,7 @@ import (
 //GenerateEmailToken generate from map to Email token
 func GenerateEmailToken(emailContext map[string]interface{}) TokenRequest {
 	emailToken := TokenRequest{}
-	iterateEmailContext([]string{"IsRoot", "ClientPrefix", "ClientID", "Email", "Username"}, &emailToken, emailContext)
+	iterateEmailContext([]string{"IsRoot", "ClientPrefix", "ClientARN", "Email", "Username"}, &emailToken, emailContext)
 	return emailToken
 }
 

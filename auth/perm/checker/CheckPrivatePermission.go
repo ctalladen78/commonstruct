@@ -1,8 +1,6 @@
 package checker
 
 import (
-	"strconv"
-
 	"github.com/kkesley/commonstruct/arn"
 	"github.com/kkesley/commonstruct/auth/jwt/jwtidentity"
 )
@@ -16,7 +14,7 @@ func CheckPrivatePermission(ARN string, token jwtidentity.TokenRequest, allowPee
 		return false
 	} else if token.UserARN != ARN && token.ClientARN != ARN && !token.IsRoot && !allowPeer {
 		return false
-	} else if arn.GetPartResourceID(ARN, "itea") != strconv.FormatUint(token.ClientID, 10) {
+	} else if arn.GetPartResourceID(ARN, "itea") != arn.GetResourceID(token.ClientARN) {
 		return false
 	}
 	return true

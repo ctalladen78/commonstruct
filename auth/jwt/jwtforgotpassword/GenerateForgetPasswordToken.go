@@ -7,7 +7,7 @@ import (
 //GenerateForgotPasswordToken generate from map to Forgot Password token
 func GenerateForgotPasswordToken(context map[string]interface{}) TokenRequest {
 	forgotPasswordToken := TokenRequest{}
-	iterateForgotPasswordContext([]string{"IsRoot", "ClientPrefix", "ClientID", "Username", "Time", "UserARN"}, &forgotPasswordToken, context)
+	iterateForgotPasswordContext([]string{"IsRoot", "ClientPrefix", "ClientARN", "Username", "Time", "UserARN"}, &forgotPasswordToken, context)
 	return forgotPasswordToken
 }
 
