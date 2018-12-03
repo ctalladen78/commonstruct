@@ -62,11 +62,6 @@ func PrepareUpdate(tableName string, key interface{}, attributes interface{}, co
 		return nil, err
 	}
 
-	conAttr, err := dynamodbattribute.MarshalMap(conditionsValue)
-	if err != nil {
-		return nil, err
-	}
-
 	updateStatements := make([]string, 0)
 	newAttributes := make(map[string]*dynamodb.AttributeValue)
 	newNames := make(map[string]*string)
@@ -79,12 +74,20 @@ func PrepareUpdate(tableName string, key interface{}, attributes interface{}, co
 	}
 
 	conditionStatements := make([]string, 0)
-	conditionStatements = append(conditionStatements, conditionsKey)
-	for key, val := range conAttr {
-		conditionStatements = append(conditionStatements, "#con"+strconv.Itoa(name)+" = :con"+key)
-		newAttributes[":con"+key] = val
-		newNames["#con"+strconv.Itoa(name)] = aws.String(key)
-		name++
+	if len(conditionsKey) > 0 {
+		conditionStatements = append(conditionStatements, conditionsKey)
+	}
+	if conditionsValue != nil {
+		conAttr, err := dynamodbattribute.MarshalMap(conditionsValue)
+		if err != nil {
+			return nil, err
+		}
+		for key, val := range conAttr {
+			conditionStatements = append(conditionStatements, "#con"+strconv.Itoa(name)+" = :con"+key)
+			newAttributes[":con"+key] = val
+			newNames["#con"+strconv.Itoa(name)] = aws.String(key)
+			name++
+		}
 	}
 	var conditionExpression *string
 	if len(conditionStatements) > 0 {
