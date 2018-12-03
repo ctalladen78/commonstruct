@@ -8,8 +8,8 @@ import (
 
 func TestVerifier(test *testing.T) {
 	request := TokenRequest{
-		Username: "kk@gmail.com",
-		ClientID: 1,
+		Username:  "kk@gmail.com",
+		ClientARN: "arn::itea::1::platform::client::1",
 	}
 	jwt, err := GenerateJWT(request, time.Hour*1, "SuperSecretKeyOnlyForThisApplication")
 	claims, err := VerifyToken(jwt, "SuperSecretKeyOnlyForThisApplication")

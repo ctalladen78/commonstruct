@@ -26,11 +26,11 @@ func iterateEmailContext(fields []string, token *TokenRequest, context map[strin
 					continue
 				}
 				token.ClientPrefix = context[field].(string)
-			case "ClientID":
-				if fieldType != "float64" {
+			case "ClientARN":
+				if fieldType != "string" {
 					continue
 				}
-				token.ClientID = uint64(context[field].(float64))
+				token.ClientARN = context[field].(string)
 			case "Email":
 				if fieldType != "string" {
 					continue

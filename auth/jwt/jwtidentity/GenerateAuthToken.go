@@ -42,12 +42,6 @@ func iterateAuthContext(fields []string, token *TokenRequest, context map[string
 						}
 					}
 				}
-			case "ClientID":
-				if fieldType == "string" {
-					token.ClientID, _ = strconv.ParseUint(context[field].(string), 10, 64)
-				} else if fieldType == "float64" {
-					token.ClientID = uint64(context[field].(float64))
-				}
 			case "ClientARN":
 				if fieldType != "string" {
 					continue

@@ -31,11 +31,11 @@ func iterateForgotPasswordContext(fields []string, token *TokenRequest, context 
 					continue
 				}
 				token.ClientPrefix = context[field].(string)
-			case "ClientID":
-				if fieldType != "float64" {
+			case "ClientARN":
+				if fieldType != "string" {
 					continue
 				}
-				token.ClientID = uint64(context[field].(float64))
+				token.ClientARN = context[field].(string)
 			case "Username":
 				if fieldType != "string" {
 					continue
