@@ -12,7 +12,6 @@ type EsUser struct {
 	Username           *string    `json:"username,omitempty"`
 	IsRoot             *bool      `json:"is_root,omitempty"`
 	Email              *string    `json:"email,omitempty"`
-	Password           *string    `json:"password,omitempty"`
 	FirstName          *string    `json:"first_name,omitempty"`
 	LastName           *string    `json:"last_name,omitempty"`
 	Phone              *string    `json:"phone,omitempty"`
