@@ -45,7 +45,7 @@ type EsSchedule struct {
 	//However, teacher can view student schedules
 	ScheduleTargets []string `json:"schedule_targets,omitempty" location:"body"`
 
-	Description *string `json:"description,omitempty" location:"body"`
+	Description *string `json:"description" location:"body"`
 	Title       *string `json:"title,omitempty" location:"body"`
 
 	Principal *string    `json:"principal,omitempty"`

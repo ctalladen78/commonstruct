@@ -9,7 +9,7 @@ type EsScore struct {
 	Code      *string `json:"code,omitempty"`
 
 	Title   *string `json:"title,omitempty"`
-	Comment *string `json:"comment,omitempty"`
+	Comment *string `json:"comment"`
 
 	//ScoringDate is when the score is written by the scorer
 	ScoringDate *time.Time `json:"scoring_date,omitempty"`

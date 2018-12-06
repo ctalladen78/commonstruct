@@ -11,11 +11,11 @@ type EsUser struct {
 	ClientARN          *string    `json:"client_arn,omitempty"` //this is the original client_arn
 	Username           *string    `json:"username,omitempty"`
 	IsRoot             *bool      `json:"is_root,omitempty"`
-	Email              *string    `json:"email,omitempty"`
-	FirstName          *string    `json:"first_name,omitempty"`
-	LastName           *string    `json:"last_name,omitempty"`
-	Phone              *string    `json:"phone,omitempty"`
-	Title              *string    `json:"title,omitempty"`
+	Email              *string    `json:"email"`
+	FirstName          *string    `json:"first_name"`
+	LastName           *string    `json:"last_name"`
+	Phone              *string    `json:"phone"`
+	Title              *string    `json:"title"`
 	Active             *bool      `json:"active,omitempty"`
 	Principal          *string    `json:"principal,omitempty"`
 	PasswordNeedChange *bool      `json:"password_need_change,omitempty"`
