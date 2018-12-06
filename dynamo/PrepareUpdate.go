@@ -1,6 +1,7 @@
 package dynamo
 
 import (
+	"encoding/json"
 	"strconv"
 	"strings"
 
@@ -57,11 +58,17 @@ func PrepareUpdate(tableName string, key interface{}, attributes interface{}, co
 	if err != nil {
 		return nil, err
 	}
-	valAttr, err := dynamodbattribute.MarshalMap(attributes)
+	//marshal to json first, so empty strings won't be omitted
+	tempStr, err := json.Marshal(attributes)
 	if err != nil {
 		return nil, err
 	}
-
+	var temp map[string]interface{}
+	json.Unmarshal(tempStr, &temp)
+	valAttr, err := dynamodbattribute.MarshalMap(temp)
+	if err != nil {
+		return nil, err
+	}
 	updateStatements := make([]string, 0)
 	newAttributes := make(map[string]*dynamodb.AttributeValue)
 	newNames := make(map[string]*string)
