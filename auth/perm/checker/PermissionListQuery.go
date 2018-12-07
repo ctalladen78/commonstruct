@@ -1,7 +1,7 @@
 package checker
 
 //PermissionListQuery build logic of permission query for list operations
-func (permission CheckResponse) PermissionListQuery(field string, filterOutput FilterIDsOutput) ([]string, []string) {
+func (permission CheckResponse) PermissionListQuery(filterOutput FilterIDsOutput) ([]string, []string) {
 	var allows []string
 	var denies []string
 	if permission.Allow.All { //if permission has allow all
