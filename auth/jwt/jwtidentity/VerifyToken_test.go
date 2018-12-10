@@ -12,7 +12,6 @@ func TestVerifier(test *testing.T) {
 	request := TokenRequest{
 		IsRoot:     true,
 		UserARN:    "arn::itea::3::platform::root-user::3",
-		ClientID:   3,
 		ClientName: "Test",
 		FirstName:  aws.String("hello"),
 		LastName:   aws.String(""),

@@ -12,7 +12,6 @@ func TestGenerateJWT(test *testing.T) {
 	request := TokenRequest{
 		IsRoot:     true,
 		UserARN:    "test-arn",
-		ClientID:   1,
 		ClientName: "test",
 		FirstName:  aws.String("hello"),
 		LastName:   aws.String("there"),
@@ -30,7 +29,6 @@ func TestGenerateJWT(test *testing.T) {
 func TestGenerateJWTWithIssuer(test *testing.T) {
 	request := TokenRequest{
 		UserARN:    "test-arn",
-		ClientID:   1,
 		ClientARN:  "client-arn",
 		ClientName: "test",
 		FirstName:  aws.String("hello"),

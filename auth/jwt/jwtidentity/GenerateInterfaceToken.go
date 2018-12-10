@@ -19,5 +19,6 @@ func GenerateInterfaceToken(token TokenRequest) map[string]interface{} {
 		"Groups":     strings.Join(token.Groups, ","),
 		"Device":     token.Device,
 		"IsExternal": token.IsExternal,
+		"Service":    token.Service,
 	}
 }
