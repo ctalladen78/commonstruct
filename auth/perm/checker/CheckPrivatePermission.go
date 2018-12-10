@@ -14,7 +14,7 @@ func CheckPrivatePermission(ARN string, token jwtidentity.TokenRequest, allowPee
 		return false
 	} else if token.UserARN != ARN && token.ClientARN != ARN && !token.IsRoot && !allowPeer {
 		return false
-	} else if arn.GetPartResourceID(ARN, "arn") == "itea" && arn.GetPartResourceID(ARN, "client") != arn.GetResourceID(token.ClientARN) {
+	} else if (arn.GetPartResourceID(ARN, "platform") == "client" && arn.GetPartResourceID(ARN, "client") != arn.GetResourceID(token.ClientARN)) || (arn.GetPartResourceID(ARN, "platform") != "client" && arn.GetPartResourceID(ARN, "itea") != arn.GetResourceID(token.ClientARN)) {
 		return false
 	}
 	return true
