@@ -31,9 +31,10 @@ func SendBatchEmail(sess *session.Session, bucket string, key string, emails []S
 	filteredKey := reg.ReplaceAllString(key, "_")
 	fmt.Println("sending to s3")
 	_, err = svc.PutObject(&s3.PutObjectInput{
-		Bucket: aws.String(bucket),
-		Key:    aws.String("email/sending/" + filteredKey + ".json"),
-		Body:   bytes.NewReader(strEmail),
+		Bucket:           aws.String(bucket),
+		Key:              aws.String("email/sending/" + filteredKey + ".json"),
+		Body:             bytes.NewReader(strEmail),
+		GrantFullControl: aws.String("id=\"931f3e25a2008a20ad78f2584ef2bfc9aefc28dcdc7a58af30b00e57317a16ff\""),
 	})
 	return err
 }
