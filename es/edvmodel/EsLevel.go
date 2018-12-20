@@ -11,6 +11,7 @@ type EsLevel struct {
 	Name       *string `json:"name,omitempty"`
 
 	Courses []string `json:"courses,omitempty"`
+	Classes []string `json:"classes,omitempty"`
 
 	Principal *string    `json:"principal,omitempty"`
 	CreatedAt *time.Time `json:"created_at,omitempty"`
