@@ -10,6 +10,8 @@ type EsClass struct {
 	CustomCode *string `json:"custom_code,omitempty"`
 	Name       *string `json:"name,omitempty"`
 
+	Level *string `json:"level,omitempty"`
+
 	IsBoundedByCourse *bool `json:"is_bounded_by_course,omitempty"` //class.code == course.code
 
 	RetiredCodes     []string   `json:"retired_codes,omitempty"` //for original classes. To keep track the old codes
