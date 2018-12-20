@@ -18,7 +18,6 @@ type EsClass struct {
 
 	InheritedFromClassCode *string `json:"inherited_from_class_code,omitempty"` //for inherited class, this is the old class code. i.e. old class is retired
 
-	Courses  []string `json:"courses,omitempty"`
 	Students []string `json:"students,omitempty"`
 
 	//CustomTeacher holds the teacher for a specific course. This will override all courses teachers

@@ -2,14 +2,20 @@ package edviseperm
 
 //ActionConstant holds constant in higher level
 type ActionConstant struct {
-	Platform PlatformAction `json:"platform"`
-	Basic    BasicAction    `json:"general"`
+	Platform  PlatformAction  `json:"platform"`
+	Education EducationAction `json:"education"`
+	Basic     BasicAction     `json:"general"`
 }
 
 //PlatformAction holds action of platform
 type PlatformAction struct {
-	User       UserAction       `json:"user"`
-	School     SchoolAction     `json:"school"`
+	User   UserAction   `json:"user"`
+	School SchoolAction `json:"school"`
+}
+
+//EducationAction holds action of education
+type EducationAction struct {
+	Level      LevelAction      `json:"level"`
 	Course     CourseAction     `json:"course"`
 	Class      ClassAction      `json:"class"`
 	Schedule   ScheduleAction   `json:"schedule"`
@@ -29,6 +35,14 @@ type UserAction struct {
 type SchoolAction struct {
 	Read  string `json:"read"`
 	Write string `json:"write"`
+}
+
+//LevelAction holds action for levels
+type LevelAction struct {
+	Read   string `json:"read"`
+	Write  string `json:"write"`
+	Delete string `json:"delete"`
+	Create string `json:"create"`
 }
 
 //CourseAction holds action for courses
@@ -99,35 +113,43 @@ var Action = ActionConstant{
 			Read:  Permission.Platform.School + "::" + "read",
 			Write: Permission.Platform.School + "::" + "write",
 		},
+	},
+	Education: EducationAction{
+		Level: LevelAction{
+			Read:   Permission.Education.Level + "::" + "read",
+			Write:  Permission.Education.Level + "::" + "write",
+			Delete: Permission.Education.Level + "::" + "delete",
+			Create: Permission.Education.Level + "::" + "create",
+		},
 		Course: CourseAction{
-			Read:   Permission.Platform.Course + "::" + "read",
-			Write:  Permission.Platform.Course + "::" + "write",
-			Delete: Permission.Platform.Course + "::" + "delete",
-			Create: Permission.Platform.Course + "::" + "create",
+			Read:   Permission.Education.Course + "::" + "read",
+			Write:  Permission.Education.Course + "::" + "write",
+			Delete: Permission.Education.Course + "::" + "delete",
+			Create: Permission.Education.Course + "::" + "create",
 		},
 		Class: ClassAction{
-			Read:   Permission.Platform.Class + "::" + "read",
-			Write:  Permission.Platform.Class + "::" + "write",
-			Delete: Permission.Platform.Class + "::" + "delete",
-			Create: Permission.Platform.Class + "::" + "create",
+			Read:   Permission.Education.Class + "::" + "read",
+			Write:  Permission.Education.Class + "::" + "write",
+			Delete: Permission.Education.Class + "::" + "delete",
+			Create: Permission.Education.Class + "::" + "create",
 		},
 		Schedule: ScheduleAction{
-			Read:   Permission.Platform.Schedule + "::" + "read",
-			Write:  Permission.Platform.Schedule + "::" + "write",
-			Delete: Permission.Platform.Schedule + "::" + "delete",
-			Create: Permission.Platform.Schedule + "::" + "create",
+			Read:   Permission.Education.Schedule + "::" + "read",
+			Write:  Permission.Education.Schedule + "::" + "write",
+			Delete: Permission.Education.Schedule + "::" + "delete",
+			Create: Permission.Education.Schedule + "::" + "create",
 		},
 		Assessment: AssessmentAction{
-			Read:   Permission.Platform.Assessment + "::" + "read",
-			Write:  Permission.Platform.Assessment + "::" + "write",
-			Delete: Permission.Platform.Assessment + "::" + "delete",
-			Create: Permission.Platform.Assessment + "::" + "create",
+			Read:   Permission.Education.Assessment + "::" + "read",
+			Write:  Permission.Education.Assessment + "::" + "write",
+			Delete: Permission.Education.Assessment + "::" + "delete",
+			Create: Permission.Education.Assessment + "::" + "create",
 		},
 		Score: ScoreAction{
-			Read:   Permission.Platform.Score + "::" + "read",
-			Write:  Permission.Platform.Score + "::" + "write",
-			Delete: Permission.Platform.Score + "::" + "delete",
-			Create: Permission.Platform.Score + "::" + "create",
+			Read:   Permission.Education.Score + "::" + "read",
+			Write:  Permission.Education.Score + "::" + "write",
+			Delete: Permission.Education.Score + "::" + "delete",
+			Create: Permission.Education.Score + "::" + "create",
 		},
 	},
 }
