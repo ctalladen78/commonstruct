@@ -18,8 +18,16 @@ type EsCourse struct {
 	//This can be used for home teachers for this class. This field can also be used if every courses is taught per class basis,
 	Teachers []string `json:"teachers,omitempty"`
 
-	Principal *string    `json:"principal,omitempty"`
-	CreatedAt *time.Time `json:"created_at,omitempty"`
-	UpdatedAt *time.Time `json:"updated_at,omitempty"`
-	UpdatedBy *string    `json:"updated_by,omitempty"`
+	Principal      *string                     `json:"principal,omitempty"`
+	CreatedAt      *time.Time                  `json:"created_at,omitempty"`
+	UpdatedAt      *time.Time                  `json:"updated_at,omitempty"`
+	UpdatedBy      *string                     `json:"updated_by,omitempty"`
+	LevelOverrides map[string]EsCourseOverride `json:"level_overrides,omitempty"`
+}
+
+//EsCourseOverride enables overriding attributes for different levels
+type EsCourseOverride struct {
+	Name        *string  `json:"name,omitempty"`
+	Description *string  `json:"description,omitempty"`
+	Teachers    []string `json:"teachers,omitempty"`
 }
