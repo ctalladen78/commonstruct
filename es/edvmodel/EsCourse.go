@@ -12,7 +12,7 @@ type EsCourse struct {
 	Description     *string `json:"description"`
 	DefaultDuration *int    `json:"default_duration"` //in minutes
 
-	Level *string `json:"level,omitempty"`
+	Levels []string `json:"level,omitempty"`
 
 	//Teachers hold the user arn of teachers
 	//This can be used for home teachers for this class. This field can also be used if every courses is taught per class basis,
