@@ -16,8 +16,8 @@ type EsCourse struct {
 
 	//Teachers hold the user arn of teachers
 	//This can be used for home teachers for this class. This field can also be used if every courses is taught per class basis,
-	Teachers []string `json:"teachers,omitempty"`
-
+	Teachers       []string                    `json:"teachers,omitempty"`
+	Settings       map[string]string           `json:"settings,omitempty"`
 	Principal      *string                     `json:"principal,omitempty"`
 	CreatedAt      *time.Time                  `json:"created_at,omitempty"`
 	UpdatedAt      *time.Time                  `json:"updated_at,omitempty"`
