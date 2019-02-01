@@ -14,8 +14,10 @@ type EsAssessment struct {
 	Attachments    []string `json:"attachments,omitempty"`
 	Weight         *float64 `json:"weight,omitempty"` //out of 100
 
-	ReleaseDate  *time.Time `json:"release_date,omitempty"`
-	DeadlineDate *time.Time `json:"deadline_date,omitempty"`
+	ManualPublished  *bool      `json:"manual_published,omitempty"`
+	ReleaseDate      *time.Time `json:"release_date,omitempty"`
+	DeadlineDate     *time.Time `json:"deadline_date,omitempty"`
+	DeadlineSchedule *string    `json:"deadline_schedule,omitempty"`
 
 	Classes []string `json:"classes,omitempty"`
 	Course  *string  `json:"course,omitempty"`
