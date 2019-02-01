@@ -17,8 +17,8 @@ type EsAssessment struct {
 	ReleaseDate  *time.Time `json:"release_date,omitempty"`
 	DeadlineDate *time.Time `json:"deadline_date,omitempty"`
 
-	ClassCodes []string `json:"class_codes,omitempty"`
-	CourseCode *string  `json:"course_code,omitempty"`
+	Classes []string `json:"classes,omitempty"`
+	Course  *string  `json:"course,omitempty"`
 
 	Principal *string    `json:"principal,omitempty"`
 	CreatedAt *time.Time `json:"created_at,omitempty"`
