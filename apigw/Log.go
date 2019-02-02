@@ -51,9 +51,14 @@ func Log(request interface{}, logType string) (err error) {
 func stripValues(t reflect.Type, v reflect.Value) (err error) {
 	if v.Kind() == reflect.Slice {
 		for i := 0; i < v.Len(); i++ {
-			stripValues(v.Index(i).Type(), v.Index(i).Elem())
+			if v.Index(i).Kind() == reflect.Ptr {
+				stripValues(v.Index(i).Type(), v.Index(i).Elem())
+			} else {
+				stripValues(v.Index(i).Type(), v.Index(i))
+			}
 		}
-	} else if v.Kind() != reflect.Struct {
+	}
+	if v.Kind() != reflect.Struct {
 		return nil
 	}
 
