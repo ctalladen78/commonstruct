@@ -18,6 +18,10 @@ type EsAssessment struct {
 	ReleaseDate      *time.Time `json:"release_date,omitempty"`
 	DeadlineDate     *time.Time `json:"deadline_date,omitempty"`
 	DeadlineSchedule *string    `json:"deadline_schedule,omitempty"`
+	CustomDeadlineDate     map[string]*time.Time `json:"custom_deadline_date,omitempty"`
+	CustomDeadlineSchedule map[string]string     `json:"custom_deadline_schedule,omitempty"`
+
+	IsRemedial *bool `json:"is_remedial,omitempty"`
 
 	Classes []string `json:"classes,omitempty"`
 	Course  *string  `json:"course,omitempty"`
