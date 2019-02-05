@@ -14,11 +14,11 @@ type EsAssessment struct {
 	Attachments    []string `json:"attachments,omitempty"`
 	Weight         *string  `json:"weight,omitempty"` //out of 100
 
-	ManualPublished        *bool                        `json:"manual_published,omitempty"`
-	ReleaseDate            *time.Time                   `json:"release_date,omitempty"`
-	DeadlineDate           *time.Time                   `json:"deadline_date,omitempty"`
-	CustomDeadlineDate     []AssessmentDeadlineDate     `json:"custom_deadline_date,omitempty"`
-	CustomDeadlineSchedule []AssessmentDeadlineSchedule `json:"custom_deadline_schedule,omitempty"`
+	ManualPublished        *bool                         `json:"manual_published,omitempty"`
+	ReleaseDate            *time.Time                    `json:"release_date,omitempty"`
+	DeadlineDate           *time.Time                    `json:"deadline_date,omitempty"`
+	CustomDeadlineDate     *[]AssessmentDeadlineDate     `json:"custom_deadline_date,omitempty"`
+	CustomDeadlineSchedule *[]AssessmentDeadlineSchedule `json:"custom_deadline_schedule,omitempty"`
 
 	IsRemedial                 *bool   `json:"is_remedial,omitempty"`
 	RemedialOriginalAssessment *string `json:"remedial_original_assessment,omitempty"`
