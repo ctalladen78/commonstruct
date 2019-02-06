@@ -21,6 +21,7 @@ type EducationAction struct {
 	Schedule   ScheduleAction   `json:"schedule"`
 	Assessment AssessmentAction `json:"assessment"`
 	Score      ScoreAction      `json:"score"`
+	Attendance AttendanceAction `json:"attendance"`
 }
 
 //UserAction holds action of user
@@ -79,6 +80,14 @@ type AssessmentAction struct {
 
 //ScoreAction holds action for scores
 type ScoreAction struct {
+	Read   string `json:"read"`
+	Write  string `json:"write"`
+	Delete string `json:"delete"`
+	Create string `json:"create"`
+}
+
+//AttendanceAction holds action for attendance
+type AttendanceAction struct {
 	Read   string `json:"read"`
 	Write  string `json:"write"`
 	Delete string `json:"delete"`
@@ -150,6 +159,12 @@ var Action = ActionConstant{
 			Write:  Permission.Education.Score + "::" + "write",
 			Delete: Permission.Education.Score + "::" + "delete",
 			Create: Permission.Education.Score + "::" + "create",
+		},
+		Attendance: AttendanceAction{
+			Read:   Permission.Education.Attendance + "::" + "read",
+			Write:  Permission.Education.Attendance + "::" + "write",
+			Delete: Permission.Education.Attendance + "::" + "delete",
+			Create: Permission.Education.Attendance + "::" + "create",
 		},
 	},
 }
