@@ -26,9 +26,12 @@ type EsScore struct {
 	//2. Final scores e.g. ["FINAL"]
 	Targets []string `json:"targets,omitempty"`
 
-	//CourseCode will be the course of this score
+	//Course will be the course of this score
 	//e.g. COURSE/OIWMMW-JASDUSDm
-	CourseCode *string `json:"course_code,omitempty"`
+	Course *string `json:"course,omitempty"`
+
+	Score       *float64 `json:"score,omitempty"`
+	ScoreLetter *string  `json:"score_letter,omitempty"` //optional if exist e.g. A, A+, A-
 
 	Principal *string    `json:"principal,omitempty"`
 	CreatedAt *time.Time `json:"created_at,omitempty"`
