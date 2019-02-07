@@ -30,6 +30,8 @@ type EsScore struct {
 	//e.g. COURSE/OIWMMW-JASDUSDm
 	Course *string `json:"course,omitempty"`
 
+	Weight *string `json:"weight,omitempty"` //if empty or AUTO, weight will fill the remaining weight
+
 	Score       *float64 `json:"score,omitempty"`
 	ScoreLetter *string  `json:"score_letter,omitempty"` //optional if exist e.g. A, A+, A-
 
