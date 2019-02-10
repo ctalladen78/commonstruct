@@ -11,7 +11,8 @@ type EsComment struct {
 	Comment       *string  `json:"comment,omitempty"`
 	ReplyTo       []string `json:"reply_to,omitempty"`
 	Targets       []string `json:"targets,omitempty"`
-	ServiceScopes []string `json:"service_scopes,omitempty"` //scope of service. If empty, can be viewed by all
+	ServiceScopes []string `json:"service_scopes,omitempty"`
+	Type          *string  `json:"type,omitempty"`
 
 	Principal *string    `json:"principal,omitempty"`
 	CreatedAt *time.Time `json:"created_at,omitempty"`

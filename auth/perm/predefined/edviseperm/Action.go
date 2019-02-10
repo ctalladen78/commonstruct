@@ -97,10 +97,8 @@ type AttendanceAction struct {
 
 //CommentAction holds action for comment
 type CommentAction struct {
-	ReadStudentComment        string `json:"read:student_comment"`
-	WriteStudentComment       string `json:"write:student_comment"`
-	ReadAssessmentDiscussion  string `json:"read:assessment_discussion"`
-	WriteAssessmentDiscussion string `json:"write:assessment_discussion"`
+	Read  string `json:"read"`
+	Write string `json:"write"`
 }
 
 //BasicAction holds basic action
@@ -182,10 +180,8 @@ var Action = ActionConstant{
 			Create: Permission.Education.Attendance + "::" + "create",
 		},
 		Comment: CommentAction{
-			ReadStudentComment:        Permission.Education.Comment + "::" + "read/student-comment",
-			WriteStudentComment:       Permission.Education.Comment + "::" + "write/student-comment",
-			ReadAssessmentDiscussion:  Permission.Education.Comment + "::" + "read/assessment-discussion",
-			WriteAssessmentDiscussion: Permission.Education.Comment + "::" + "write/assessment-discussion",
+			Read:  Permission.Education.Comment + "::" + "read",
+			Write: Permission.Education.Comment + "::" + "write",
 		},
 	},
 }
