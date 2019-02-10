@@ -21,6 +21,7 @@ type EducationConstant struct {
 	Assessment string `json:"assessment"`
 	Score      string `json:"score"`
 	Attendance string `json:"attendance"`
+	Comment    string `json:"comment"`
 }
 
 //Permission predefined permission
@@ -37,5 +38,6 @@ var Permission = PermissionConstant{
 		Assessment: "edvise::education::assessment",
 		Score:      "edvise::education::score",
 		Attendance: "edvise::education::attendance",
+		Comment:    "edvise::education::comment",
 	},
 }

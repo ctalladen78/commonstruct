@@ -8,9 +8,10 @@ type EsComment struct {
 	ClientARN *string `json:"client_arn,omitempty"`
 	Code      *string `json:"code,omitempty"`
 
-	Comment *string  `json:"comment,omitempty"`
-	ReplyTo []string `json:"reply_to,omitempty"`
-	Targets []string `json:"targets,omitempty"`
+	Comment       *string  `json:"comment,omitempty"`
+	ReplyTo       []string `json:"reply_to,omitempty"`
+	Targets       []string `json:"targets,omitempty"`
+	ServiceScopes []string `json:"service_scopes,omitempty"` //scope of service. If empty, can be viewed by all
 
 	Principal *string    `json:"principal,omitempty"`
 	CreatedAt *time.Time `json:"created_at,omitempty"`

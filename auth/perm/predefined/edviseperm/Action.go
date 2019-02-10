@@ -22,6 +22,7 @@ type EducationAction struct {
 	Assessment AssessmentAction `json:"assessment"`
 	Score      ScoreAction      `json:"score"`
 	Attendance AttendanceAction `json:"attendance"`
+	Comment    CommentAction    `json:"comment"`
 }
 
 //UserAction holds action of user
@@ -94,6 +95,14 @@ type AttendanceAction struct {
 	Create string `json:"create"`
 }
 
+//CommentAction holds action for comment
+type CommentAction struct {
+	ReadStudentComment        string `json:"read:student_comment"`
+	WriteStudentComment       string `json:"write:student_comment"`
+	ReadAssessmentDiscussion  string `json:"read:assessment_discussion"`
+	WriteAssessmentDiscussion string `json:"write:assessment_discussion"`
+}
+
 //BasicAction holds basic action
 type BasicAction struct {
 	Read     string         `json:"read"`
@@ -110,6 +119,12 @@ var Action = ActionConstant{
 		Write:  "write",
 		Delete: "delete",
 		Create: "create",
+		Fragment: FragmentAction{
+			Edvise: EdviseFragment{
+				StudentComment:       "/student-comment",
+				AssessmentDiscussion: "/assessment-discussion",
+			},
+		},
 	},
 	Platform: PlatformAction{
 		User: UserAction{
@@ -165,6 +180,12 @@ var Action = ActionConstant{
 			Write:  Permission.Education.Attendance + "::" + "write",
 			Delete: Permission.Education.Attendance + "::" + "delete",
 			Create: Permission.Education.Attendance + "::" + "create",
+		},
+		Comment: CommentAction{
+			ReadStudentComment:        Permission.Education.Comment + "::" + "read/student-comment",
+			WriteStudentComment:       Permission.Education.Comment + "::" + "write/student-comment",
+			ReadAssessmentDiscussion:  Permission.Education.Comment + "::" + "read/assessment-discussion",
+			WriteAssessmentDiscussion: Permission.Education.Comment + "::" + "write/assessment-discussion",
 		},
 	},
 }

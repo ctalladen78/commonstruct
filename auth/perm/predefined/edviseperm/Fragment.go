@@ -2,9 +2,11 @@ package edviseperm
 
 //FragmentAction holds additional feature of a resource
 type FragmentAction struct {
-	Platform PlatformFragment `json:"platform"`
+	Edvise EdviseFragment `json:"edvise"`
 }
 
-//PlatformFragment holds the fragment of platform
-type PlatformFragment struct {
+//EdviseFragment holds the fragment of edvise
+type EdviseFragment struct {
+	StudentComment       string `json:"student_comment"`
+	AssessmentDiscussion string `json:"assessment_discussion"`
 }
