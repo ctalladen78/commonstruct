@@ -10,6 +10,7 @@ type PlatformConstant struct {
 	User    string `json:"user"`
 	Role    string `json:"role"`
 	Billing string `json:"billing"`
+	Comment string `json:"comment"`
 }
 
 //Permission predefined permission
@@ -18,5 +19,6 @@ var Permission = PermissionConstant{
 		User:    "itea::platform::user",
 		Role:    "itea::platform::role",
 		Billing: "itea::platform::billing",
+		Comment: "edvise::education::comment",
 	},
 }

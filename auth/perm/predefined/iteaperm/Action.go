@@ -12,6 +12,7 @@ type PlatformAction struct {
 	Role           RoleAction           `json:"role"`
 	PasswordPolicy PasswordPolicyAction `json:"password_policy"`
 	Billing        BillingAction        `json:"billing"`
+	Comment        CommentAction        `json:"comment"`
 }
 
 //UserAction holds action of user
@@ -39,6 +40,12 @@ type PasswordPolicyAction struct {
 //BillingAction holds action for billings
 type BillingAction struct {
 	Read string `json:"billing"`
+}
+
+//CommentAction holds action for comment
+type CommentAction struct {
+	Read  string `json:"read"`
+	Write string `json:"write"`
 }
 
 //BasicAction holds basic action
@@ -82,6 +89,10 @@ var Action = ActionConstant{
 		},
 		Billing: BillingAction{
 			Read: Permission.Platform.Billing + "::" + "read",
+		},
+		Comment: CommentAction{
+			Read:  Permission.Platform.Comment + "::" + "read",
+			Write: Permission.Platform.Comment + "::" + "write",
 		},
 	},
 }
