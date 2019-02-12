@@ -7,6 +7,4 @@ type FragmentAction struct {
 
 //EdviseFragment holds the fragment of edvise
 type EdviseFragment struct {
-	StudentComment       string `json:"student_comment"`
-	AssessmentDiscussion string `json:"assessment_discussion"`
 }

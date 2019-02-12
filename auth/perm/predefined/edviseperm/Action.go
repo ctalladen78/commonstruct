@@ -22,7 +22,6 @@ type EducationAction struct {
 	Assessment AssessmentAction `json:"assessment"`
 	Score      ScoreAction      `json:"score"`
 	Attendance AttendanceAction `json:"attendance"`
-	Comment    CommentAction    `json:"comment"`
 }
 
 //UserAction holds action of user
@@ -95,12 +94,6 @@ type AttendanceAction struct {
 	Create string `json:"create"`
 }
 
-//CommentAction holds action for comment
-type CommentAction struct {
-	Read  string `json:"read"`
-	Write string `json:"write"`
-}
-
 //BasicAction holds basic action
 type BasicAction struct {
 	Read     string         `json:"read"`
@@ -118,10 +111,7 @@ var Action = ActionConstant{
 		Delete: "delete",
 		Create: "create",
 		Fragment: FragmentAction{
-			Edvise: EdviseFragment{
-				StudentComment:       "/student-comment",
-				AssessmentDiscussion: "/assessment-discussion",
-			},
+			Edvise: EdviseFragment{},
 		},
 	},
 	Platform: PlatformAction{
@@ -178,10 +168,6 @@ var Action = ActionConstant{
 			Write:  Permission.Education.Attendance + "::" + "write",
 			Delete: Permission.Education.Attendance + "::" + "delete",
 			Create: Permission.Education.Attendance + "::" + "create",
-		},
-		Comment: CommentAction{
-			Read:  Permission.Education.Comment + "::" + "read",
-			Write: Permission.Education.Comment + "::" + "write",
 		},
 	},
 }
