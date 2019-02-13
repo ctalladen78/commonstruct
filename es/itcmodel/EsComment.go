@@ -14,8 +14,9 @@ type EsComment struct {
 	ServiceScopes []string `json:"service_scopes,omitempty"`
 	Type          *string  `json:"type,omitempty"`
 
-	Principal *string    `json:"principal,omitempty"`
-	CreatedAt *time.Time `json:"created_at,omitempty"`
-	UpdatedAt *time.Time `json:"updated_at,omitempty"`
-	UpdatedBy *string    `json:"updated_by,omitempty"`
+	Principal      *string    `json:"principal,omitempty"`
+	PrincipalScope *string    `json:"principal_scope,omitempty"`
+	CreatedAt      *time.Time `json:"created_at,omitempty"`
+	UpdatedAt      *time.Time `json:"updated_at,omitempty"`
+	UpdatedBy      *string    `json:"updated_by,omitempty"`
 }
