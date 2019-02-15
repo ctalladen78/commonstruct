@@ -17,6 +17,7 @@ type EventType struct {
 	Target    Target                 `json:"target"`
 	Detail    map[string]interface{} `json:"detail"`
 	CreatedAt time.Time
+	TTL       *int `json:"ttl,omitempty"`
 }
 
 //Target target of an event
