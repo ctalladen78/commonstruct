@@ -12,10 +12,10 @@ import (
 
 //GetAccessToken make an http request to iteacloud platform API to get access token
 func GetAccessToken(request AccessTokenRequest) (*AccessTokenResponse, error) {
-	url := "https://dev-api.iteacloud.com/external-client-auth"
+	url := "https://dev-api.iteacloud.com/platform/external-client-auth"
 
 	if os.Getenv("STAGE") == "prod" {
-		url = "https://api.iteacloud.com/external-client-auth"
+		url = "https://api.iteacloud.com/platform/external-client-auth"
 	}
 	body, err := json.Marshal(request)
 	if err != nil {
