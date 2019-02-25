@@ -9,4 +9,5 @@ type Notification struct {
 	Message     *string    `json:"message"`
 	SendTime    *time.Time `json:"send_time"`
 	ExternalID  *string    `json:"external_id"` //this id is used for scheduling. Must be unique accross the system
+	Enabled     *bool      `json:"enabled"`     //if not enabled, ignore this notification
 }
