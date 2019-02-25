@@ -2,9 +2,10 @@ package notification
 
 //Platform notification
 type Platform struct {
-	GCM         *GCM  `json:"GCM,omitempty"`
-	APNS        *APNS `json:"APNS,omitempty"`
-	APNSSandBox *APNS `json:"APNS_SANDBOX,omitempty"`
+	Default     *string `json:"default,omitempty"`
+	GCM         *GCM    `json:"GCM,omitempty"`
+	APNS        *APNS   `json:"APNS,omitempty"`
+	APNSSandBox *APNS   `json:"APNS_SANDBOX,omitempty"`
 }
 
 //GCM payload
