@@ -9,8 +9,8 @@ type Platform struct {
 
 //GCM payload
 type GCM struct {
-	Notification *GCMNotification       `json:"notification,omitempty"`
-	Data         map[string]interface{} `json:"data,omitempty"`
+	Notification *GCMNotification  `json:"notification,omitempty"`
+	Data         map[string]string `json:"data,omitempty"`
 }
 
 //GCMNotification notification payload
@@ -21,8 +21,8 @@ type GCMNotification struct {
 
 //APNS payload
 type APNS struct {
-	Notification *APNSNotification      `json:"aps,omitempty"`
-	Data         map[string]interface{} `json:"data,omitempty"`
+	Notification *APNSNotification `json:"aps,omitempty"`
+	Data         map[string]string `json:"data,omitempty"`
 }
 
 //APNSNotification aps payload
