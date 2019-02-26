@@ -14,7 +14,13 @@ type Platform struct {
 //GCM payload
 type GCM struct {
 	Notification *GCMNotification  `json:"notification,omitempty"`
+	Config       *AndroidConfig    `json:"android,omitempty"`
 	Data         map[string]string `json:"data,omitempty"`
+}
+
+//AndroidConfig represents the config of GCM for android
+type AndroidConfig struct {
+	CollapseKey *string `json:"collapse_key"`
 }
 
 //GCMNotification notification payload
@@ -31,7 +37,8 @@ type APNS struct {
 
 //APNSNotification aps payload
 type APNSNotification struct {
-	Alert *APNSAlert `json:"alert,omitempty"`
+	Alert    *APNSAlert `json:"alert,omitempty"`
+	ThreadID *string    `json:"thread-id,omitempty"`
 }
 
 //APNSAlert alert payload
