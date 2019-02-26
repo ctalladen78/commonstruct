@@ -13,7 +13,7 @@ type EsNotice struct {
 	//custom made filters for each application. e.g. user type.
 	//The outer array is OR statement.
 	//The inner array is AND statement.
-	//Example: Notice for PARENT or STUDENT will be [][]string{[]string{"parent"}, []string{"student"}}
+	//Example: Notice for PARENT or STUDENT will be []string{"parent", "student"}
 	//The filter can be anything depending of the application
 	Filters []string `json:"filters,omitempty"`
 
