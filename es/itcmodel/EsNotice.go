@@ -17,15 +17,15 @@ type EsNotice struct {
 	//The filter can be anything depending of the application
 	Filters []string `json:"filters,omitempty"`
 
-	Targets     []string          `json:"targets,omitempty"` //target arns. can be any resource
-	Title       *string           `json:"title,omitempty"`
-	Description *string           `json:"description,omitempty"`
-	Data        []NoticeDataValue `json:"data,omitempty"`
-
-	ServiceScopes []string   `json:"service_scopes,omitempty"` //platform / edvise
-	Principal     *string    `json:"principal,omitempty"`
-	PublishDate   *time.Time `json:"publish_date,omitempty"` //if null, then publish now
-	CreatedAt     *time.Time `json:"created_at,omitempty"`
+	Targets       []string          `json:"targets,omitempty"` //target arns. can be any resource
+	Title         *string           `json:"title,omitempty"`
+	Description   *string           `json:"description,omitempty"`
+	Data          []NoticeDataValue `json:"data,omitempty"`
+	ValidUntil    *time.Time        `json:"valid_until,omitempty"`
+	ServiceScopes []string          `json:"service_scopes,omitempty"` //platform / edvise
+	Principal     *string           `json:"principal,omitempty"`
+	PublishDate   *time.Time        `json:"publish_date,omitempty"` //if null, then publish now
+	CreatedAt     *time.Time        `json:"created_at,omitempty"`
 }
 
 //NoticeDataValue represent a data key
