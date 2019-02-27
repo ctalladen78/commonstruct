@@ -6,14 +6,14 @@ import (
 )
 
 //GetResource get a single resource
-func GetResource(svc *dynamodb.DynamoDB, tableName string, key map[string]*dynamodb.AttributeValue) error {
-
+func GetResource(svc *dynamodb.DynamoDB, tableName string, key map[string]*dynamodb.AttributeValue) (map[string]*dynamodb.AttributeValue, error) {
 	input := &dynamodb.GetItemInput{
 		Key:       key,
 		TableName: aws.String(tableName),
 	}
-	if _, err := svc.GetItem(input); err != nil {
-		return err
+	output, err := svc.GetItem(input)
+	if err != nil || output == nil || output.Item == nil {
+		return nil, err
 	}
-	return nil
+	return output.Item, nil
 }
