@@ -26,34 +26,36 @@ type EsUser struct {
 
 //EsParent holds the parent in elastic search
 type EsParent struct {
-	ARN                *string `json:"arn,omitempty"`
-	FirstName          *string `json:"first_name"`
-	LastName           *string `json:"last_name"`
-	Phone              *string `json:"phone"`
-	Email              *string `json:"email"`
-	Gender             *string `json:"gender"`
-	Religion           *string `json:"religion"`
-	DateOfBirth        *string `json:"date_of_birth"`
-	PlaceOfBirth       *string `json:"place_of_birth"`
-	Relationship       *string `json:"relationship"`
-	PasswordNeedChange *bool   `json:"password_need_change"`
+	ARN                *string         `json:"arn,omitempty"`
+	FirstName          *string         `json:"first_name"`
+	LastName           *string         `json:"last_name"`
+	Phone              *string         `json:"phone"`
+	Email              *string         `json:"email"`
+	Gender             *string         `json:"gender"`
+	Religion           *string         `json:"religion"`
+	DateOfBirth        *string         `json:"date_of_birth"`
+	PlaceOfBirth       *string         `json:"place_of_birth"`
+	Relationship       *string         `json:"relationship"`
+	PasswordNeedChange *bool           `json:"password_need_change"`
+	Attributes         []UserAttribute `json:"attributes"`
 }
 
 //EsStudent holds the student in elastic search
 type EsStudent struct {
-	ARN                *string      `json:"arn,omitempty"`
-	FirstName          *string      `json:"first_name"`
-	LastName           *string      `json:"last_name"`
-	Phone              *string      `json:"phone"`
-	Email              *string      `json:"email"`
-	Gender             *string      `json:"gender"`
-	Religion           *string      `json:"religion"`
-	DateOfBirth        *string      `json:"date_of_birth"`
-	PlaceOfBirth       *string      `json:"place_of_birth"`
-	Relationship       *string      `json:"relationship"`
-	PasswordNeedChange *bool        `json:"password_need_change"`
-	Medical            *UserMedical `json:"medical"`
-	Address            *UserAddress `json:"address"`
+	ARN                *string         `json:"arn,omitempty"`
+	FirstName          *string         `json:"first_name"`
+	LastName           *string         `json:"last_name"`
+	Phone              *string         `json:"phone"`
+	Email              *string         `json:"email"`
+	Gender             *string         `json:"gender"`
+	Religion           *string         `json:"religion"`
+	DateOfBirth        *string         `json:"date_of_birth"`
+	PlaceOfBirth       *string         `json:"place_of_birth"`
+	Relationship       *string         `json:"relationship"`
+	PasswordNeedChange *bool           `json:"password_need_change"`
+	Medical            *UserMedical    `json:"medical"`
+	Address            *UserAddress    `json:"address"`
+	Attributes         []UserAttribute `json:"attributes"`
 }
 
 //UserMedical holds the medical condition of the student
@@ -81,4 +83,10 @@ type UserParentExt struct {
 	DateOfBirth  *string `json:"date_of_birth"`
 	PlaceOfBirth *string `json:"place_of_birth"`
 	Relationship *string `json:"relationship"`
+}
+
+//UserAttribute holds attribute data
+type UserAttribute struct {
+	Key   *string `json:"key,omitempty"`
+	Value *string `json:"value,omitempty"`
 }
