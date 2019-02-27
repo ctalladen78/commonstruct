@@ -14,9 +14,9 @@ type EsMessage struct {
 	//this is the name 'when' the user sent this message.
 	//the actual name may differ as user can change their name.
 	//this field will be used in the notification
-	From    *string           `json:"from,omitempty"`
-	Message *string           `json:"message,omitempty"`
-	Data    map[string]string `json:"data,omitempty"`
+	From    *string            `json:"from,omitempty"`
+	Message *string            `json:"message,omitempty"`
+	Data    []MessageDataValue `json:"data,omitempty"`
 
 	ServiceScopes []string `json:"service_scopes,omitempty"` //used to filter the result when listing (e.g. edvise/platform)
 
@@ -29,4 +29,10 @@ type EsMessage struct {
 	HandleID  *string    `json:"handle_id,omitempty"`
 	Principal *string    `json:"principal,omitempty"`
 	CreatedAt *time.Time `json:"created_at,omitempty"`
+}
+
+//MessageDataValue represent a data key
+type MessageDataValue struct {
+	Key   *string `json:"key"`
+	Value *string `json:"value"`
 }
