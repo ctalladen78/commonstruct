@@ -26,9 +26,10 @@ type EsMessage struct {
 
 	//this is used to identify the ID of the handle key.
 	//e.g. the code of the class for class discussion
-	HandleID  *string    `json:"handle_id,omitempty"`
-	Principal *string    `json:"principal,omitempty"`
-	CreatedAt *time.Time `json:"created_at,omitempty"`
+	HandleID         *string    `json:"handle_id,omitempty"`
+	Principal        *string    `json:"principal,omitempty"`
+	PrincipalService *string    `json:"principal_service,omitempty"`
+	CreatedAt        *time.Time `json:"created_at,omitempty"`
 }
 
 //MessageDataValue represent a data key
