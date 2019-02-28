@@ -38,6 +38,6 @@ type EsClass struct {
 
 //CourseTeacher holds primary teachers for this class per course
 type CourseTeacher struct {
-	Key     *string  `json:"key,omitempty"`      //course arn
-	Teacher []string `json:"teachers,omitempty"` //teacher arn
+	Key      *string  `json:"key,omitempty"` //course arn
+	Teachers []string `json:"teachers"`      //teacher arn
 }
