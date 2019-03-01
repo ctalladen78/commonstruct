@@ -6,6 +6,7 @@ type Payload struct {
 	Message    *string           `json:"message,omitempty"`
 	Data       map[string]string `json:"data"`
 	GroupingID *string           `json:"grouping_id"`
+	ID         *string           `json:"id"`
 }
 
 //ConvertToNotification converts payload to a notification object
@@ -16,6 +17,7 @@ func (p Payload) ConvertToNotification() Platform {
 			Notification: &GCMNotification{
 				Title: p.Title,
 				Text:  p.Message,
+				Tag:   p.ID,
 			},
 			Config: &AndroidConfig{
 				CollapseKey: p.GroupingID,

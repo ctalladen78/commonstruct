@@ -27,6 +27,7 @@ type AndroidConfig struct {
 type GCMNotification struct {
 	Title *string `json:"title,omitempty"`
 	Text  *string `json:"text,omitempty"`
+	Tag   *string `json:"tag,omitempty"`
 }
 
 //APNS payload
