@@ -4,6 +4,7 @@ package edviseperm
 type ActionConstant struct {
 	Platform  PlatformAction  `json:"platform"`
 	Education EducationAction `json:"education"`
+	Talk      TalkAction      `json:"talk"`
 	Basic     BasicAction     `json:"general"`
 }
 
@@ -15,13 +16,19 @@ type PlatformAction struct {
 
 //EducationAction holds action of education
 type EducationAction struct {
-	Level      LevelAction      `json:"level"`
-	Course     CourseAction     `json:"course"`
-	Class      ClassAction      `json:"class"`
-	Schedule   ScheduleAction   `json:"schedule"`
-	Assessment AssessmentAction `json:"assessment"`
-	Score      ScoreAction      `json:"score"`
-	Attendance AttendanceAction `json:"attendance"`
+	Level          LevelAction          `json:"level"`
+	Course         CourseAction         `json:"course"`
+	Class          ClassAction          `json:"class"`
+	Schedule       ScheduleAction       `json:"schedule"`
+	Assessment     AssessmentAction     `json:"assessment"`
+	AssessmentType AssessmentTypeAction `json:"assessment_type"`
+	Score          ScoreAction          `json:"score"`
+	Attendance     AttendanceAction     `json:"attendance"`
+}
+
+//TalkAction holds action of talk
+type TalkAction struct {
+	Notice NoticeAction `json:"notice"`
 }
 
 //UserAction holds action of user
@@ -94,6 +101,20 @@ type AttendanceAction struct {
 	Create string `json:"create"`
 }
 
+//AssessmentTypeAction holds action for assessment_type
+type AssessmentTypeAction struct {
+	Read   string `json:"read"`
+	Write  string `json:"write"`
+	Delete string `json:"delete"`
+	Create string `json:"create"`
+}
+
+//NoticeAction holds action for notice
+type NoticeAction struct {
+	Read  string `json:"read"`
+	Write string `json:"write"`
+}
+
 //BasicAction holds basic action
 type BasicAction struct {
 	Read     string         `json:"read"`
@@ -157,6 +178,12 @@ var Action = ActionConstant{
 			Delete: Permission.Education.Assessment + "::" + "delete",
 			Create: Permission.Education.Assessment + "::" + "create",
 		},
+		AssessmentType: AssessmentTypeAction{
+			Read:   Permission.Education.AssessmentType + "::" + "read",
+			Write:  Permission.Education.AssessmentType + "::" + "write",
+			Delete: Permission.Education.AssessmentType + "::" + "delete",
+			Create: Permission.Education.AssessmentType + "::" + "create",
+		},
 		Score: ScoreAction{
 			Read:   Permission.Education.Score + "::" + "read",
 			Write:  Permission.Education.Score + "::" + "write",
@@ -168,6 +195,12 @@ var Action = ActionConstant{
 			Write:  Permission.Education.Attendance + "::" + "write",
 			Delete: Permission.Education.Attendance + "::" + "delete",
 			Create: Permission.Education.Attendance + "::" + "create",
+		},
+	},
+	Talk: TalkAction{
+		Notice: NoticeAction{
+			Read:  Permission.Talk.Notice + "::" + "read",
+			Write: Permission.Talk.Notice + "::" + "write",
 		},
 	},
 }
