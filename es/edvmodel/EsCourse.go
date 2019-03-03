@@ -31,3 +31,17 @@ type EsCourseOverride struct {
 	Description *string  `json:"description,omitempty"`
 	Teachers    []string `json:"teachers,omitempty"`
 }
+
+//EsCourseAssessmentType holds assessment_types for a course
+//e.g. Math course has multiple weighting ["QUIZ": 20%, "EXAM": 40%] etc
+type EsCourseAssessmentType struct {
+	Course          *string                        `json:"course,omitempty"`
+	AssessmentTypes []EsCourseAssessmentTypeWeight `json:"assessment_types,omitempty"`
+}
+
+//EsCourseAssessmentTypeWeight holds the actual weight
+//e.g. "EXAM" => 20%
+type EsCourseAssessmentTypeWeight struct {
+	AssessmentType *string  `json:"assessment_type,omitempty"`
+	Weight         *float64 `json:"weight,omitempty"`
+}
