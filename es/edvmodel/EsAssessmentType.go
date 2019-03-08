@@ -8,9 +8,10 @@ type EsAssessmentType struct {
 	ClientARN *string `json:"client_arn,omitempty"`
 	Code      *string `json:"code,omitempty"`
 
-	Name           *string `json:"name,omitempty"`
-	Description    *string `json:"description,omitempty"`
-	Classification *string `json:"classification,omitempty"` //classification of this assessment-type. e.g. exam, quiz, homework
+	Name           *string  `json:"name,omitempty"`
+	Description    *string  `json:"description,omitempty"`
+	Classification *string  `json:"classification,omitempty"` //classification of this assessment-type. e.g. exam, quiz, homework
+	DefaultWeight  *float64 `json:"default_weight,omitempty"`
 
 	Principal *string    `json:"principal,omitempty"`
 	CreatedAt *time.Time `json:"created_at,omitempty"`
