@@ -24,6 +24,7 @@ type EducationAction struct {
 	AssessmentType AssessmentTypeAction `json:"assessment_type"`
 	Score          ScoreAction          `json:"score"`
 	Attendance     AttendanceAction     `json:"attendance"`
+	Report         ReportAction         `json:"report"`
 }
 
 //TalkAction holds action of talk
@@ -103,6 +104,14 @@ type AttendanceAction struct {
 
 //AssessmentTypeAction holds action for assessment_type
 type AssessmentTypeAction struct {
+	Read   string `json:"read"`
+	Write  string `json:"write"`
+	Delete string `json:"delete"`
+	Create string `json:"create"`
+}
+
+//ReportAction holds action for report
+type ReportAction struct {
 	Read   string `json:"read"`
 	Write  string `json:"write"`
 	Delete string `json:"delete"`
@@ -195,6 +204,12 @@ var Action = ActionConstant{
 			Write:  Permission.Education.Attendance + "::" + "write",
 			Delete: Permission.Education.Attendance + "::" + "delete",
 			Create: Permission.Education.Attendance + "::" + "create",
+		},
+		Report: ReportAction{
+			Read:   Permission.Education.Report + "::" + "read",
+			Write:  Permission.Education.Report + "::" + "write",
+			Delete: Permission.Education.Report + "::" + "delete",
+			Create: Permission.Education.Report + "::" + "create",
 		},
 	},
 	Talk: TalkAction{

@@ -23,6 +23,7 @@ type EducationConstant struct {
 	AssessmentType string `json:"assessment_type"`
 	Score          string `json:"score"`
 	Attendance     string `json:"attendance"`
+	Report         string `json:"report"`
 }
 
 //TalkConstant holds the permission strings in talk
@@ -45,6 +46,7 @@ var Permission = PermissionConstant{
 		AssessmentType: "edvise::education::assessment-type",
 		Score:          "edvise::education::score",
 		Attendance:     "edvise::education::attendance",
+		Report:         "edvise::education::report",
 	},
 	Talk: TalkConstant{
 		Notice: "edvise::talk::notice",
