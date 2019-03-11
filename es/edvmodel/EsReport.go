@@ -13,9 +13,14 @@ type EsReport struct {
 	Student *string `json:"student,omitempty"`
 	Class   *string `json:"class,omitempty"`
 
-	ReportLocation      *string  `json:"report_location,omitempty"`
-	ExcludedAssessments []string `json:"excluded_assessments,omitempty"`
-	ExcludedScores      []string `json:"excluded_scores,omitempty"`
+	ReportLocation *string  `json:"report_location,omitempty"`
+	ExcludedScores []string `json:"excluded_scores,omitempty"`
+	Scores         []string `json:"scores,omitempty"`
+
+	StartDate *time.Time `json:"start_date,omitempty"`
+	EndDate   *time.Time `json:"end_date,omitempty"`
+
+	ReleaseDate *time.Time `json:"release_date,omitempty"`
 
 	Principal             *string                        `json:"principal,omitempty"`
 	CreatedAt             *time.Time                     `json:"created_at,omitempty"`
