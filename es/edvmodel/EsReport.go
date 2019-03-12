@@ -33,6 +33,7 @@ type EsReport struct {
 
 //EsReportAssessmentTypeScore hold the assessment type accumulated scores (unweighted)
 type EsReportAssessmentTypeScore struct {
+	Course          *string  `json:"course"`
 	AssessmentType  *string  `json:"assessment_type"`
 	Weight          *float64 `json:"weight"`
 	UnweightedScore *float64 `json:"unweighted_score"`
