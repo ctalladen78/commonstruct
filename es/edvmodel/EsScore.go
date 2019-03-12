@@ -35,6 +35,8 @@ type EsScore struct {
 	Score       *float64 `json:"score,omitempty"`
 	ScoreLetter *string  `json:"score_letter,omitempty"` //optional if exist e.g. A, A+, A-
 
+	AssessmentType *string `json:"assessment_type,omitempty"` //if not from assessment, can use assessment type (e.g. behaviour)
+
 	Principal *string    `json:"principal,omitempty"`
 	CreatedAt *time.Time `json:"created_at,omitempty"`
 	UpdatedAt *time.Time `json:"updated_at,omitempty"`
