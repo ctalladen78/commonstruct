@@ -23,16 +23,16 @@ type EsReport struct {
 
 	ReleaseDate *time.Time `json:"release_date,omitempty"`
 
-	Principal            *string                        `json:"principal,omitempty"`
-	CreatedAt            *time.Time                     `json:"created_at,omitempty"`
-	UpdatedAt            *time.Time                     `json:"updated_at,omitempty"`
-	UpdatedBy            *string                        `json:"updated_by,omitempty"`
-	AssessmentTypeScores []EsReportAssessmentTypeScores `json:"assessment_type_scores,omitempty"`
-	CommentSections      []EsReportCommentSection       `json:"comment_sections,omitempty"`
+	Principal            *string                       `json:"principal,omitempty"`
+	CreatedAt            *time.Time                    `json:"created_at,omitempty"`
+	UpdatedAt            *time.Time                    `json:"updated_at,omitempty"`
+	UpdatedBy            *string                       `json:"updated_by,omitempty"`
+	AssessmentTypeScores []EsReportAssessmentTypeScore `json:"assessment_type_scores,omitempty"`
+	CommentSections      []EsReportCommentSection      `json:"comment_sections,omitempty"`
 }
 
-//EsReportAssessmentTypeScores hold the assessment type accumulated scores (unweighted)
-type EsReportAssessmentTypeScores struct {
+//EsReportAssessmentTypeScore hold the assessment type accumulated scores (unweighted)
+type EsReportAssessmentTypeScore struct {
 	AssessmentType  *string  `json:"assessment_type"`
 	Weight          *float64 `json:"weight"`
 	UnweightedScore *float64 `json:"unweighted_score"`
