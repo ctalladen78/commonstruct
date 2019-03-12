@@ -37,7 +37,6 @@ type EsReportAssessmentTypeScore struct {
 	AssessmentType  *string  `json:"assessment_type"`
 	Weight          *float64 `json:"weight"`
 	UnweightedScore *float64 `json:"unweighted_score"`
-	WeightedScore   *float64 `json:"weighted_score"`
 }
 
 //EsReportCommentSection holds the comment for a section in the report
