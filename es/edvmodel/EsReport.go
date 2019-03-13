@@ -10,7 +10,7 @@ type EsReport struct {
 	ClientARN *string `json:"client_arn,omitempty"`
 	Code      *string `json:"code,omitempty"`
 
-	ReportBatch *string `json:"report_batch"`
+	ReportBatch *string `json:"report_batch,omitempty"`
 
 	Title   *string `json:"title,omitempty"`
 	Student *string `json:"student,omitempty"`
