@@ -8,8 +8,7 @@ import (
 
 func TestGenerateJWT(test *testing.T) {
 	request := TokenRequest{
-		Email:    "kk@gmail.com",
-		ClientID: 1,
+		Email: "kk@gmail.com",
 	}
 	jwt, err := GenerateJWT(request, time.Minute*1, "SuperSecretKeyOnlyForThisApplication")
 	if err != nil {
@@ -21,8 +20,7 @@ func TestGenerateJWT(test *testing.T) {
 
 func TestGenerateJWTWithIssuer(test *testing.T) {
 	request := TokenRequest{
-		Email:    "kk@gmail.com",
-		ClientID: 1,
+		Email: "kk@gmail.com",
 	}
 	jwt, err := GenerateJWTWithIssuer(request, time.Minute*1, "SuperSecretKeyOnlyForThisApplication", "pss")
 	if err != nil {
