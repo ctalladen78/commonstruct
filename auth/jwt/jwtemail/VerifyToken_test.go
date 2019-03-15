@@ -8,8 +8,7 @@ import (
 
 func TestVerifier(test *testing.T) {
 	request := TokenRequest{
-		Email:    "kk@gmail.com",
-		ClientID: 1,
+		Email: "kk@gmail.com",
 	}
 	jwt, err := GenerateJWT(request, time.Hour*1, "SuperSecretKeyOnlyForThisApplication")
 	claims, err := VerifyToken(jwt, "SuperSecretKeyOnlyForThisApplication")
