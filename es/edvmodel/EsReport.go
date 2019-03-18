@@ -16,10 +16,9 @@ type EsReport struct {
 	Student *string `json:"student,omitempty"`
 	Class   *string `json:"class,omitempty"`
 
-	ReportLocation  *string                  `json:"report_location,omitempty"`
-	ExcludedScores  []string                 `json:"excluded_scores,omitempty"`
-	Scores          []string                 `json:"scores,omitempty"`
-	OverrideWeights []EsReportOverrideWeight `json:"override_weights"`
+	ReportLocation *string  `json:"report_location,omitempty"`
+	ExcludedScores []string `json:"excluded_scores,omitempty"`
+	Scores         []string `json:"scores,omitempty"`
 
 	StartDate *time.Time `json:"start_date,omitempty"`
 	EndDate   *time.Time `json:"end_date,omitempty"`
@@ -36,10 +35,12 @@ type EsReport struct {
 
 //EsReportAssessmentTypeScore hold the assessment type accumulated scores (unweighted)
 type EsReportAssessmentTypeScore struct {
-	Course          *string  `json:"course"`
-	AssessmentType  *string  `json:"assessment_type"`
-	Weight          *float64 `json:"weight"`
-	UnweightedScore *float64 `json:"unweighted_score"`
+	Course          *string                  `json:"course"`
+	AssessmentType  *string                  `json:"assessment_type"`
+	Weight          *float64                 `json:"weight"`
+	UnweightedScore *float64                 `json:"unweighted_score"`
+	ScoreCount      *int64                   `json:"score_count"`
+	OverrideWeights []EsReportOverrideWeight `json:"override_weights"`
 }
 
 //EsReportOverrideWeight holds overriden weights for a specific score
