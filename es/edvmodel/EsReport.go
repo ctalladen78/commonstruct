@@ -45,8 +45,9 @@ type EsReportAssessmentTypeScore struct {
 
 //EsReportOverrideWeight holds overriden weights for a specific score
 type EsReportOverrideWeight struct {
-	Key    *string  `json:"key"`
-	Weight *float64 `json:"weight"`
+	Key             *string  `json:"key"`
+	Weight          *float64 `json:"weight"`
+	UnweightedScore *float64 `json:"unweighted_score"`
 }
 
 //EsReportCommentSection holds the comment for a section in the report
