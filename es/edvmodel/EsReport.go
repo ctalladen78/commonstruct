@@ -35,10 +35,17 @@ type EsReport struct {
 
 //EsReportAssessmentTypeScore hold the assessment type accumulated scores (unweighted)
 type EsReportAssessmentTypeScore struct {
-	Course          *string  `json:"course"`
-	AssessmentType  *string  `json:"assessment_type"`
-	Weight          *float64 `json:"weight"`
-	UnweightedScore *float64 `json:"unweighted_score"`
+	Course          *string                  `json:"course"`
+	AssessmentType  *string                  `json:"assessment_type"`
+	Weight          *float64                 `json:"weight"`
+	UnweightedScore *float64                 `json:"unweighted_score"`
+	OverrideWeights []EsReportOverrideWeight `json:"override_weights"`
+}
+
+//EsReportOverrideWeight holds overriden weights for a specific score
+type EsReportOverrideWeight struct {
+	Key    *string  `json:"key"`
+	Weight *float64 `json:"weight"`
 }
 
 //EsReportCommentSection holds the comment for a section in the report
