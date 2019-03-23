@@ -23,7 +23,8 @@ type EsReport struct {
 	StartDate *time.Time `json:"start_date,omitempty"`
 	EndDate   *time.Time `json:"end_date,omitempty"`
 
-	ReleaseDate *time.Time `json:"release_date,omitempty"`
+	ReleaseDate  *time.Time `json:"release_date,omitempty"`
+	DoNotRelease *bool      `json:"do_not_release,omitempty"`
 
 	Principal            *string                       `json:"principal,omitempty"`
 	CreatedAt            *time.Time                    `json:"created_at,omitempty"`
