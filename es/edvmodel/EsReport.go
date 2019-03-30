@@ -32,6 +32,13 @@ type EsReport struct {
 	UpdatedBy            *string                       `json:"updated_by,omitempty"`
 	AssessmentTypeScores []EsReportAssessmentTypeScore `json:"assessment_type_scores,omitempty"`
 	CommentSections      []EsReportCommentSection      `json:"comment_sections,omitempty"`
+	Weights              []EsReportWeight              `json:"weights,omitempty"`
+}
+
+//EsReportWeight holds the weights
+type EsReportWeight struct {
+	Course     *string                  `json:"course"`
+	TypeWeight []EsReportOverrideWeight `json:"type_weight"`
 }
 
 //EsReportAssessmentTypeScore hold the assessment type accumulated scores (unweighted)
