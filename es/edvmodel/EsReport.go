@@ -37,8 +37,8 @@ type EsReport struct {
 
 //EsReportWeight holds the weights
 type EsReportWeight struct {
-	Course     *string                  `json:"course"`
-	TypeWeight []EsReportOverrideWeight `json:"type_weight"`
+	Course      *string                  `json:"course"`
+	TypeWeights []EsReportOverrideWeight `json:"type_weights"`
 }
 
 //EsReportAssessmentTypeScore hold the assessment type accumulated scores (unweighted)
